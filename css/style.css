@@ -5,6 +5,9 @@ body {
   font-size: 16px;
   color: #ffffff;
   background-color: #000000;
+  background-image: url("../img/fondo.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .ventana {
@@ -90,4 +93,59 @@ body {
   font-family: "Courier New", monospace;
   font-weight: bold;
   color: #ff6666;
+}
+
+.titulo-historia {
+  max-width: 900px;
+  margin: 20px auto 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #ff0000;
+  border: 3px ridge #ff0000;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 18px;
+  color: #000000;
+}
+
+.titulo-historia p {
+  display: inline-block;
+  margin: 3px 0;
+  padding-left: 100%;
+  animation: mover 12s linear infinite;
+}
+
+@keyframes mover {
+  to { transform: translateX(-100%); }
+}
+
+.bloque {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  background: #000000;
+  border: 3px ridge #ff0000;
+  border-top: none;
+}
+
+.foto {
+  width: 350px;
+  max-width: 100%;
+  flex-shrink: 0;
+  border: 4px outset #c0c0c0;
+}
+
+.texto {
+  margin: 0 0 12px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .bloque {
+    flex-direction: column;
+  }
 }
