@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 30px 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.ventana {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #c0c0c0;
+  border: 3px outset #e0e0e0;
+  padding: 3px;
+}
+
+.ventana-barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px 4px 3px 6px;
+  background: linear-gradient(90deg, #800000, #ff0000);
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.botones {
+  display: flex;
+  gap: 2px;
+}
+
+.botones i {
+  font-style: normal;
+  font-size: 12px;
+  width: 18px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c0c0c0;
+  color: #000000;
+  border: 2px outset #ffffff;
+}
+
+.alerta {
+  margin: 4px 0;
+  padding: 3px 0;
+  background: #000000;
+  border: 2px inset #808080;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+.alerta p {
+  margin: 0;
+  padding: 0 8px;
+}
+
+.contenido {
+  padding: 20px;
+  background: #000000;
+  border: 3px inset #808080;
+}
+
+.logo {
+  display: inline-block;
+  padding: 4px 16px;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 60px;
+  letter-spacing: 4px;
+  color: #ffffff;
+  background: #000000;
+  border: 5px ridge #ff0000;
+}
+
+.lema {
+  margin: 16px 0 4px;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: #ff0000;
+  text-shadow: 2px 2px 0 #550000;
+}
+
+.subtitulo {
+  margin: 0 0 12px;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  color: #ff6666;
+}
