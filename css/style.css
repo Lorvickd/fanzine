@@ -1,20 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 30px 10px;
   font-family: "Times New Roman", Times, serif;
   font-size: 16px;
   color: #ffffff;
-  background-color: #000000;
+  background-color: #1a1a1a;
   background-image: url("../img/fondo.jpg");
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
 }
 
-.ventana {
-  max-width: 900px;
+img {
+  max-width: 100%;
+}
+
+.pagina {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1150px;
   margin: 0 auto;
-  background: #c0c0c0;
-  border: 3px outset #e0e0e0;
+}
+
+.principal {
+  flex: 1;
+  min-width: 0;
+}
+
+.ventana {
+  background: #000000;
+  border: 3px outset #808080;
   padding: 3px;
 }
 
@@ -51,6 +71,8 @@ body {
 .alerta {
   margin: 4px 0;
   padding: 3px 0;
+  overflow: hidden;
+  white-space: nowrap;
   background: #000000;
   border: 2px inset #808080;
   font-family: "Courier New", monospace;
@@ -59,14 +81,27 @@ body {
 }
 
 .alerta p {
+  display: inline-block;
   margin: 0;
-  padding: 0 8px;
+  padding-left: 100%;
+  animation: desplazar 15s linear infinite, flash 3s infinite;
+}
+
+@keyframes desplazar {
+  to { transform: translateX(-100%); }
 }
 
 .contenido {
   padding: 20px;
   background: #000000;
   border: 3px inset #808080;
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -78,6 +113,10 @@ body {
   color: #ffffff;
   background: #000000;
   border: 5px ridge #ff0000;
+}
+
+.tv {
+  width: 180px;
 }
 
 .lema {
@@ -96,8 +135,7 @@ body {
 }
 
 .titulo-historia {
-  max-width: 900px;
-  margin: 20px auto 0;
+  margin: 20px 0 0;
   overflow: hidden;
   white-space: nowrap;
   background: #ff0000;
@@ -105,6 +143,7 @@ body {
   font-family: Impact, "Arial Black", sans-serif;
   font-size: 18px;
   color: #000000;
+  scroll-margin-top: 20px;
 }
 
 .titulo-historia p {
@@ -122,8 +161,6 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
   padding: 16px;
   background: #000000;
   border: 3px ridge #ff0000;
@@ -131,10 +168,9 @@ body {
 }
 
 .foto {
-  width: 350px;
-  max-width: 100%;
+  width: 320px;
   flex-shrink: 0;
-  border: 4px outset #c0c0c0;
+  border: 4px outset #808080;
 }
 
 .texto {
@@ -144,8 +180,101 @@ body {
   color: #ffffff;
 }
 
-@media (max-width: 700px) {
+.lateral {
+  width: 240px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 20px;
+}
+
+.caja-lateral {
+  margin-bottom: 20px;
+  background: #000000;
+  border: 3px outset #808080;
+  padding: 3px;
+}
+
+.lateral-barra {
+  padding: 3px 6px;
+  background: linear-gradient(90deg, #800000, #ff0000);
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.lateral-contenido {
+  margin-top: 3px;
+  padding: 12px;
+  background: #000000;
+  border: 3px inset #808080;
+}
+
+.lateral-texto {
+  margin: 0 0 6px;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+.boton {
+  display: block;
+  margin: 0 0 10px;
+  padding: 6px 10px;
+  background: #c0c0c0;
+  color: #000000;
+  border: 3px outset #ffffff;
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background: #ff0000;
+  color: #ffffff;
+}
+
+.boton:active {
+  border-style: inset;
+}
+
+.foto-lateral {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 3px outset #808080;
+}
+
+iframe {
+  display: block;
+  border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+  .pagina {
+    flex-direction: column;
+  }
+
+  .principal,
+  .lateral {
+    width: 100%;
+  }
+
+  .lateral {
+    position: static;
+  }
+
   .bloque {
     flex-direction: column;
   }
+
+  .foto {
+    width: 100%;
+  }
+}
+
+.boton:hover {
+  animation: headShake 0.6s;
 }
